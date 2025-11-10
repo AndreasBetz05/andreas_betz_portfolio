@@ -70,6 +70,42 @@
             animation: fadeInUp 1s ease 0.3s backwards;
         }
 
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #B4B4B8;
+            font-weight: 400;
+            margin-top: 1.5rem;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.9s backwards;
+        }
+
+        .contact-links a {
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0, 122, 255, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: #007AFF;
+            color: #0A84FF;
+        }
+
+        .contact-links span {
+            color: #48484A;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -150,7 +186,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
+            width: 0px;
             height: 100%;
             background: linear-gradient(180deg, #007AFF, transparent);
         }
@@ -325,7 +361,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 3px;
+            width: 0px;
             height: 100%;
             background: #007AFF;
         }
@@ -473,6 +509,20 @@
             .hero p {
                 font-size: 1.2rem;
             }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .contact-links span {
+                display: none;
+            }
             
             .section-title {
                 font-size: 2.5rem;
@@ -526,6 +576,18 @@
         <div class="hero-content">
             <h1>Andreas Betz</h1>
             <p>From First Principles to Flight-Ready Systems</p>
+            <div class="hero-subtitle">
+                UC Berkeley Physics, B.A. 2026 — Emphasis in Mechanical & Aerospace Engineering
+            </div>
+            <div class="contact-links">
+                <a href="mailto:andreasbetz@berkeley.edu">andreasbetz@berkeley.edu</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/andreasbetz6" target="_blank" rel="noopener">LinkedIn</a>
+                <span>•</span>
+                <a href="Andreas_Betz_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+                <span>•</span>
+                <a href="https://github.com/AndreasBetz05" target="_blank" rel="noopener">GitHub</a>
+            </div>
         </div>
         <div class="scroll-indicator"></div>
     </section>
@@ -534,9 +596,9 @@
     <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="accent-line"></div>
-        <div class="about-content" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start;">
-            <div class="about-image" style="position: sticky; top: 2rem;">
-                <img src="https://i.imgur.com/cvHwyBT.jpeg" alt="Andreas" style="width: 100%; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="about-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="https://i.imgur.com/cvHwyBT.jpeg" alt="Andreas" style="width: 300px; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.08);">
             </div>
             <div>
                 <p>
@@ -706,239 +768,4 @@ The next step is to manufacture one full tracker plane and fill all straws with 
         <div class="container">
             <button class="back-button" onclick="showProjects()">← Back to Projects</button>
             <div class="detail-content">
-                <h2>Liquid Engine Thrust Throttling</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                
-                <div class="detail-section">
-                    <h3>Project Overview</h3>
-                    <p>
-STAR (Space Technology and Rocketry) is UC Berkeley's collegiate competitive rocketry team. Since its founding, the club has built 18 vehicles and is currently developing its 19th and 20th. I am officially a member of the Guidance, Navigation, and Controls (GNC) team, but I work fluidly between GNC and Propulsion to bridge the gap between modeling, control, and engine performance.
-                    </p>
-                    <p>
-Now, I am developing a detailed plant model built in Python from first-principles thermodynamics and fluid mechanics. This model simulates our liquid rocket engine's pressure-regulated feed system, oxidizer and fuel flow, combustion chamber dynamics, and regenerative cooling. It predicts critical parameters such as specific impulse, thrust, thrust coefficient, characteristic velocity, Mach number distributions within the chamber, heat flux, stagnation temperature, expansion coefficient, throat area, and pressure profiles throughout the system.                    </p>
-                    <p>
-From this model, I am generating a high-fidelity look-up table that stores pre-calculated engine responses across a range of operating conditions. Embedded in the rocket's onboard computer, this table enables real-time retrieval of control inputs based on sensor data and flight states. Ultimately, it will allow the vehicle to dynamically throttle its liquid engine to reach target altitudes with precision and efficiency.
-                    </p>
-                    <p>
-This model determines specific impulse, thrust, thrust coefficient, characteristic velocity, mach number at various points within the chamber, heat flux, stagnation temperature, the expansion coefficient, the throat area, and pressures at various locations around the chamber.                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/0sJTnIU.jpeg" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-
-                <div class="detail-section">
-                    <h3>What Skills I Used and What I Learned</h3>
-                    <p>
-Through this project, I programmed model in Python and simulate complex real-world systems with a strong grounding in physics and engineering principles. I gained a deep understanding of rocket engines, combustion chambers, and fluid systems, and I applied dimensional analysis extensively to perform back-of-the-envelope estimates and sanity checks. Verifying units and validating results against physical intuition became second nature. While this habit originated from my physics classes, I refined it in this project. I also learned about control theory and the basics of how closed-loop systems operate in industry applications like missiles and aircraft.
-                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/WXPbFoL.png" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="project-detail" id="cannon-detail">
-        <div class="container">
-            <button class="back-button" onclick="showProjects()">← Back to Projects</button>
-            <div class="detail-content">
-                <h2>Supersonic Automated Tennis Ball Cannon</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                
-                <div class="detail-section">
-                    <h3>Project Overview</h3>
-                    <p>
-What started as a backyard project with my dad evolved into a 15-foot tennis ball cannon and became the spark for my lifelong passion for engineering. The early, improvised builds taught me the fundamentals of safe workshop practice, material selection, and rapid prototyping. More importantly, they taught me to treat every prototype like an experiment: observe failures, form hypotheses, change one variable at a time, and iterate until the design performs reliably. That cycle of testing and learning shaped how I approach technical challenges today.
-                    </p>
-                </div>
-
-                <div class="detail-section">
-                    <h3>Where We Were</h3>
-                    <p>
-I started with the basics. After watching a YouTube video from one of my favorite engineers, I scavenged scrap PVC pipe, PVC cement, and Aquanet hairspray from the garage and a local store. In my early design, I considered barrel-to-chamber volume ratio, loading technique, and ignition strategy. I pursued a simple muzzle-loader concept with a push-button igniter set into a small chamber port, and I fashioned a ramrod sized so the projectile sat exactly at the barrel-chamber boundary. I still remember the first test near my house and the thrill of seeing a homebuilt design work as intended.                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/oT6RMQv.jpeg" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-
-                <div class="detail-section">
-                    <h3>Where We Are</h3>
-                    <p>
-In the second iteration I focused on reducing wasted energy and improving combustion consistency. I lengthened the barrel to increase the acceleration distance, allowing expanding gases to impart more energy to the projectile before it exited. I redesigned the propellant delivery system to include a regulator, solenoid, and ball valve so I could meter precise fuel quantities and achieve repeatable firing conditions. To improve mixture uniformity I added a small computer fan inside the chamber for active mixing, and I used a check-valved air pump to flush residual exhaust gases between shots. For ignition I implemented a high-voltage spark system connected to two electrodes inside the chamber to provide reliable, enclosed ignition control. I upgraded to Schedule 40 PVC for greater mechanical strength. Finally, I automated the firing sequence with an onboard Arduino and keyboard, coordinating fan, pump, solenoid, and ignition timing so tests were repeatable and data were reliable. Each change was driven by the same engineering principles: capture more useful energy, reduce uncontrolled variability, and make experiments measurable and as safe as possible. Now, I simply entered the password and pressed "go" to initiate the sequence.
-                    </p>
-                </div>
-
-                                <div class="video-grid">
-                <div class="video">
-                    <video controls>
-                    <source src="https://i.imgur.com/HEVr7ES.mp4" type="video/mp4">
-                    </video>
-                    <p>Firing Demonstration</p>
-                </div>
-
-                <div class="video">
-                    <video controls>
-                    <source src="https://i.imgur.com/FrHY2kC.mp4" type="video/mp4">
-                    </video>
-                    <p>Mach 1.4 Launch</p>
-                </div>
-                </div>
-
-                <div class="detail-section">
-                    <h3>Where We Are Going</h3>
-                    <p>
-Still, there are a few issues and modifications I will be making in the third iteration. I want to change the propellant to an oxy-acetylene combustion. This is a highly flammable and volatile substance, so I will take precautions to make the chamber safe for use.
-</p>
-<p>
-I calculated the maximum pressure induced in a combustion with this propellant and found it to be approximately 1.4 MPa (or ~200 psi) under constant volume conditions. This was determined using the ideal gas law (P = ρRT) and stoichiometric principles. First, I calculated the adiabatic flame temperature for a stoichiometric oxy-acetylene mixture (~3,100 °C or ~3,373 K). Then, assuming the reaction occurs instantaneously in a fixed volume, the pressure rise is directly proportional to the temperature rise (P₂ = P₁ * T₂/T₁). Starting from standard temperature and pressure (STP), this yields a significant pressure multiplier. However, this is a theoretical maximum; real-world factors like heat loss and incomplete combustion will lower the actual pressure. To add a critical safety margin, I will design the chamber to withstand at least 4 times this calculated pressure, targeting a safety factor of 4:1.
-</p>
-<p>
-I researched materials that were high-temperature resistant, high tensile strength, readily machinable, and had good impact toughness. The extreme heat of the oxy-acetylene flame and the cyclic pressure loading rule out many common materials like aluminum or mild steel, which would soften or become brittle.
-</p>
-<p>
-I decided on 4130 Chromoly Steel. This low-alloy steel contains chromium and molybdenum, giving it a superior strength-to-weight ratio, excellent weldability, and remarkable toughness compared to standard carbon steel (like 1018). It retains its mechanical properties at the high temperatures encountered in this application and can be heat-treated to further increase its yield strength, making it an ideal choice for a high-performance combustion chamber.
-</p>
-<p>
-Additionally, I want to make the propellant supply system more robust. I will do this by replacing any plastic tubing or basic valves with a system comprised of hard-lined stainless steel braided hoses and implementing dedicated, verified solenoid valves for each propellant line. These solenoids will be interlocked with the ignition system so that fuel and oxidizer cannot flow unless the system is armed, and they will automatically close upon ignition command or a loss of power (a fail-safe measure. Furthermore, I will integrate flashback arrestors on both the acetylene and oxygen lines immediately upstream of the combustion chamber to prevent a flame from traveling back into the supply tanks, which is a primary safety hazard with this fuel combination.
-</p>
-                </div>
-                <div class="detail-section">
-                    <h3>What I Learned</h3>
-<p>
-    This ongoing project has taught me a tremendous amount about engineering from the ground up. I learned how to evaluate materials based on tensile strength, heat tolerance, weight, and cost, and how these properties influence manufacturability and safety. I became familiar with machining practices, joining methods, and welding fundamentals, gaining a practical understanding of how to turn design concepts into physical hardware. Through each design iteration, I deepened my understanding of stress and strain, combustion dynamics, pressure vessel design, and electrical systems integration. I learned to identify weak points and reinforce them through geometry and material choice. I also developed a strong appreciation for the iterative nature of engineering: testing, observing failure modes, revising designs, and building again. Most importantly, I learned to treat safety as a central engineering principle, not an afterthought. Everything from chamber design to test setup had to be justified through first-principles reasoning, risk analysis, and critical thinking.
-</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="project-detail" id="ligo-detail">
-        <div class="container">
-            <button class="back-button" onclick="showProjects()">← Back to Projects</button>
-            <div class="detail-content">
-                <h2>LIGO Beam Tube Heating System</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                
-                <div class="detail-section">
-                    <h3>Project Overview</h3>
-                    <p>
-The LTREX project at LIGO focused on developing a method to heat a real beam tube segment under vacuum to 130°C to remove water molecules adsorbed within the stainless steel walls. By heating the pressure vessel, trace water vapor diffused out of the metal and was evacuated by the vacuum pumping system, resulting in an ultra-clean, ultra-high-vacuum environment that allows for precise laser measurements. Because LIGO's laser travels the four-kilometer beam tubes roughly 290 times, even small disturbances from residual gas molecules can accumulate and affect its ability to detect length changes as small as 10^-18 meters, which is about one tenth the diameter of a proton.
-</p>
-<p>
-I designed, fabricated, and managed the heating system used for this prolonged bake-out, which ran continuously for two months. This included designing vacuum-compatible fixtures and insulation, integrating thermocouples and pressure sensors for continuous monitoring, and analyzing temperature and residual gas data to confirm water removal. The project deepened my understanding of vacuum physics, heat transfer, and system-level engineering, and it reinforced the importance of precision, safety, and rigorous experimental control in long-duration thermal processes.
-                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/jPdwZHk.jpeg" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-
-
-                <div class="detail-section">
-                    <h3>How I Solved It</h3>
-                    <p>
-My solution involved coiling metal braided heat-trace wires around the surface of the beam tube in a helical pattern, including each end cap and the connections to the turbo pump and roughing pump. To ensure both accurate monitoring and safety, I soldered and installed multiple thermocouples and thermal fuses around the tube, taking care to avoid placing any sensor too close to a heating coil, which could lead to false readings or damage. I also had to carefully prevent runaway thermocouples, which could misreport temperature and cause uncontrolled heating. The heater controller I programmed gradually approached the target temperature and then cycled the power on and off in five-minute intervals to maintain a stable temperature throughout the two-month bake. This control strategy was necessary because sensors located in cooler regions of the tube might otherwise cause the system to supply excessive heat, creating uneven temperature distribution. The final important step was to manufacture neoprene insulation to cover every piece of exposed metal. I measured (twice or more, usually!), cut (once), and assembled the insulation. By carefully designing the wiring layout, sensor placement, and control logic, I was able to achieve uniform heating along the entire segment while ensuring safe and reliable long-duration operation.
-                    </p>
-                </div>
-
-<div class="video">
-    <video controls style="width:300px; height:auto; display:block; margin:0 auto;">
-        <source src="https://i.imgur.com/IuTheo4.mp4" type="video/mp4">
-    </video>
-    <p>Time lapse wrapping heater coils</p>
-</div>
-
-
-                <div class="detail-section">
-                    <h3>What I Learned</h3>
-                    <p>
-I learned to approach a problem from both a physicist's and an engineer's perspective. I combined first-principles reasoning with pragmatic considerations to develop a solution that was physically consistent and practically feasible. Through this project, I gained hands-on experience with soldering, integrating thermal sensors, and designing systems with manufacturability in mind.
-                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/trmyVZH.jpeg" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="project-detail" id="stax-detail">
-        <div class="container">
-            <button class="back-button" onclick="showProjects()">← Back to Projects</button>
-            <div class="detail-content">
-                <h2>STAX SPUD Locking Mechanism</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                
-                <div class="detail-section">
-                    <h3>Project Overview</h3>
-                    <p>
-STAX is a carbon capture and emissions reduction startup that specializes in servicing marine vessels at port. I worked here in the summer of 2025. The equipment used to reduce the carbon emissions from ships is all on barges, which pull alongside the vessels when in operation. They need to remain in place while operating. The solution they use is a large vertical shaft, which is lowered into the mud. It acts almost like an oar stabbed into the mud on a kayak. My project was to design and manufacture a new solution to keep these SPUDs in place when in operation. 
-                    </p>
-                </div>
-
-                    <div class="diagram-image">
-                    <img src="https://i.imgur.com/NW3cFIk.jpeg" style="width:60%; height:auto; display:block; margin:0 auto;">
-                    </div>
-
-                <div class="detail-section">
-                    <h3>How I Solved It</h3>
-                    <p>
-I solved this problem by designing a dog mechanism that engages with indentations in the SPUD itself to restrict its vertical movement. My design leveraged the weight of the dog to push down on a lever arm, which physically interacted with a blocker to control motion. I manufactured this component from stainless steel, which I chose not only for its corrosion resistance in a marine environment but also for its strength, durability, and ease of fabrication and welding. I prepared the mounting surfaces by grinding them to ensure proper fit and welded the pieces in place with precision.
-</p>
-<p>
-Once installed, I tested the mechanism over a month of repeated cycling of the SPUDs up and down and confirmed that it effectively relieved stress on the lifting wires. Based on these tests, we estimated that the lifespan of the SPUD wires could be roughly doubled. After validating the design, I manufactured additional units and successfully implemented them across the entire fleet of barges, improving the reliability and longevity of the system while minimizing maintenance requirements.
-                    </p>
-                </div>
-
-<div class="video">
-    <video controls style="width:300px; height:auto; display:block; margin:0 auto;">
-        <source src="https://i.imgur.com/cisMdae.mp4" type="video/mp4">
-    </video>
-    <p>SPUD test moving vertically</p>
-</div>
-
-                <div class="detail-section">
-                    <h3>What Skills I Learned</h3>
-                    <p>
-I gained hands-on experience in welding, designing for manufacturability, and creating components with precise tolerances and dimensional accuracy. I learned to select materials thoughtfully for real-world conditions, balancing strength, durability, and corrosion resistance. The project strengthened my mechanical system design skills, including load analysis and understanding how forces interact within a moving mechanism. I also learned how to scale a solution from a single prototype to full fleet implementation while working within operational and environmental constraints, demonstrating practical problem-solving in a complex, real-world setting.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="project-detaito optimize the chamber pressure, throat dial" id="STARthrustchamber-detail">
-        <div class="container">
-            <button class="back-button" onclick="showProjects()">← Back to Projects</button>
-            <div class="detail-content">
-                <h2>Thrust Chamber Optimization</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                
-                <div class="detail-section">
-                    <h3>Project Overview</h3>
-                    <p>
-                        My second concurrent project with STAR was to use the plant function and reasonable constraints on intial parameters to optimize the chamber pressure, throat diameter, and chamber diameter, for a known thrust value. Then, I used NASA CEA and these optimized parameters to determine the ideal Geometry for our rocket's thrust chamber. My next step is to model this chamber in CAD and fabricate it at the student machine shop at Berkeley.
-                    <p>
-                </div>
-
-                <div class="diagram-image">
-                    <img src="https://i.imgur.com/lSyrSvx.png">
-                </div>
-
-
-                <div class="detail-section">
-                    <h3>What I Learned</h3>
-                    <p>
-I gained experience applying programming to real-world engineering problems, deepened my understanding of liquid rocket engines and thermodynamic processes like regenerative cooling, and honed optimization techniques using Adam (Adaptive Moment Estimation) to refine design parameters efficiently.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+                <h2>Liquid Engine Thrust Throttling
