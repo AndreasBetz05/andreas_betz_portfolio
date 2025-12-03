@@ -597,14 +597,14 @@
             <p>From First Principles to Flight-Ready Systems</p>
             <br><br><br><br><br>
             <div class="hero-subtitle">
-                UC Berkeley Physics, B.A. 2027 — Emphasis in Mechanical & Aerospace Engineering
+                UC Berkeley Physics, B.A. 2027 — Emphasis in Mechanical Engineering
             </div>
             <div class="contact-links">
                 <a href="mailto:andreasbetz@berkeley.edu">andreasbetz@berkeley.edu</a>
                 <span>•</span>
                 <a href="https://www.linkedin.com/in/andreasbetz6" target="_blank" rel="noopener">LinkedIn</a>
                 <span>•</span>
-                <a href="Andreas_Resume_10_21_25__neither_.pdf" target="_blank" rel="noopener">Resume</a>
+                <a href="Andreas_Betz_Resume.pdf" target="_blank" rel="noopener">Resume</a>
                 <span>•</span>
                 <a href="https://github.com/AndreasBetz05" target="_blank" rel="noopener">GitHub</a>
             </div>
@@ -652,18 +652,18 @@
                     </div>
                 </div>
 
-                <div class="project-card" onclick="showProject('star')">
+                <div class="project-card" onclick="showProject('STARthrustchamber')">
                     <div class="project-image">
-                        <img src="https://i.imgur.com/pMCPwax.jpeg" alt="STAR Controller">
+                        <img src="https://i.imgur.com/a0OfqVr.png" alt="Thrust Chamber">
                     </div>
                     <div class="project-content">
-                        <h3>STAR Controller</h3>
-                        <p>Used first principles physics to develop a look-up table for closed-loop liquid engine throttling.</p>
-                        <span class="project-tag">Propulsion</span>
-                        <span class="project-tag">Controls</span>
+                        <h3>Thrust Chamber Design</h3>
+                        <p>Developed a program to optimize thrust chamber geometry from constraints on initial parameters.</p>
                         <span class="project-tag">Python</span>
-                        <span class="project-tag">Thermodynamics</span>
-                        <span class="project-tag">Fluid Mechanics</span>
+                        <span class="project-tag">First Principles Physics</span>
+                        <span class="project-tag">Propulsion</span>
+                        <span class="project-tag">Optimization</span>
+                        <span class="project-tag">Data Analysis</span>
                     </div>
                 </div>
 
@@ -680,6 +680,23 @@
                         <span class="project-tag">Rapid Prototyping</span>
                     </div>
                 </div>
+
+
+                <div class="project-card" onclick="showProject('star')">
+                    <div class="project-image">
+                        <img src="https://i.imgur.com/pMCPwax.jpeg" alt="STAR Controller">
+                    </div>
+                    <div class="project-content">
+                        <h3>STAR Controller</h3>
+                        <p>Used first principles physics to develop a look-up table for closed-loop liquid engine throttling.</p>
+                        <span class="project-tag">Propulsion</span>
+                        <span class="project-tag">Controls</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Thermodynamics</span>
+                        <span class="project-tag">Fluid Mechanics</span>
+                    </div>
+                </div>
+
 
                 <div class="project-card" onclick="showProject('ligo')">
                     <div class="project-image">
@@ -706,21 +723,6 @@
                         <span class="project-tag">Complex Machining</span>
                         <span class="project-tag">Welding</span>
                         <span class="project-tag">Advanced Machinery</span>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="showProject('STARthrustchamber')">
-                    <div class="project-image">
-                        <img src="https://i.imgur.com/a0OfqVr.png" alt="Thrust Chamber">
-                    </div>
-                    <div class="project-content">
-                        <h3>Thrust Chamber Design</h3>
-                        <p>Developed a program to optimize thrust chamber geometry from constraints on initial parameters.</p>
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">First Principles Physics</span>
-                        <span class="project-tag">Propulsion</span>
-                        <span class="project-tag">Optimization</span>
-                        <span class="project-tag">Data Analysis</span>
                     </div>
                 </div>
             </div>
@@ -1000,8 +1002,12 @@
                 
                 <div class="detail-section">
                     <h3>Project Overview</h3>
+                    <p> 
+                        I started this project by reading Rocket Propulsion Elements by George Sutton and Oscar Biblarz cover to cover. I compiled analytic equations for common liquid engine efficiency/performance metric in terms of combustion chamber geometric parameters. My goal is to maximize the specific impulse of the regenerativly cooled LOX-RP1 liquid engine by optimizing the geometry of the thrust chamber given some spatial, material, and competition constraints.
+                    </p>
+
                     <p>
-                        My second concurrent project with STAR was to use the plant function and reasonable constraints on initial parameters to optimize the chamber pressure, throat diameter, and chamber diameter, for a known thrust value. Then, I used NASA CEA and these optimized parameters to determine the ideal geometry for our rocket's thrust chamber. My next step is to model this chamber in CAD and fabricate it at the student machine shop at Berkeley.
+                        So now, I have a set of equations for specific impulse, cavitation number, various chamber location temperatures, characteristic velocity, thrust, exhaust velocity, and hoop stress in terms of basic chamber parameters like throat area, chamber radius, nozel expansion ratio, contraction ratio, and chamber pressure. From here, I performed an evolutionairy computation algorithm that randomly sampled initial parameters within reasonable bounds that I set. Then, my program computes the performance metrics for each random engine design. Based on these calculations, I can remove the failed designs from the gene pool by filtering for catastrophic failures: high temperatures, critical cavitation, or high hoop stress. The next generation is a randomly sampled variation of engines in the last generation with the highest specific impulse. This sequential process continues until the engine parameters converge on the Isp optimized chamber geometry.
                     </p>
                 </div>
 
@@ -1012,7 +1018,7 @@
                 <div class="detail-section">
                     <h3>What I Learned</h3>
                     <p>
-                        I gained experience applying programming to real-world engineering problems, deepened my understanding of liquid rocket engines and thermodynamic processes like regenerative cooling, and honed optimization techniques using Adam (Adaptive Moment Estimation) to refine design parameters efficiently.
+                        I gained experience applying my education in physics to real-world engineering problems as well as deepening my understanding and intuition of liquid engines.
                     </p>
                 </div>
             </div>
